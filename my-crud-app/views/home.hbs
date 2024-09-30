@@ -1,0 +1,51 @@
+<h3>Student Management System</h3>
+<div class="container">
+    <form action="/filteredByCity" method="get">
+        <select id="city" name="City">
+            <option value="">select a city</option>
+            {{#each citi}}
+            <option value="{{City}}">{{City}}</option>
+            {{/each }}
+        </select>
+        <button type="submit">submit</button>
+        <a href="/" class="btn">view all</a>
+        <a href="/adduser" class="addbtn">Add user</a>
+    </form>
+</div><br>
+<table class="table table-striped">
+    <thead class="thead-dark" >
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    {{#each users}}
+        {{#greaterThan Age 30}}
+            <tr class="table-warning-custom">
+        {{else}}
+            <tr>
+        {{/greaterThan}}
+            <td>{{ID}}</td>
+            <td>{{Name}}</td>
+            <td>{{Age}}</td>
+            <td>{{City}}</td>
+            <td><a class="edit" href="/edituser/{{ID}}">Edit</a></td>
+            <td><a class="delete" onclick="return confirm('Are you sure?')" href="/deleteuser/{{ID}}">Delete</a></td>
+        </tr>
+    {{/each}}
+    </tbody>
+</table>
+
+<script >
+        $("#city").select2({
+        placeholder: "Select a City",
+        width:'50%',
+        allowClear: true
+    })
+</script> 
+<script src="/script/city.js"></script>

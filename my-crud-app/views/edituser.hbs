@@ -1,0 +1,24 @@
+<h3>Edit Student</h3>
+
+{{#if msg}}
+<div class="alert">{{msg}}</div>
+{{/if}}
+
+<form method="post" action="/edituser/{{user.ID}}" autocomplete="off">
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" name="Name" value="{{user.Name}}" required>
+    </div>
+    <div class="form-group">
+        <label for="Age">Age</label>
+        <input type="number" name="Age" value="{{user.Age}}" required>
+    </div>
+    <div class="form-group">
+        <label for="City">City</label>
+        <input type="text" name="City" value="{{user.City}}" required>
+    </div>
+    <div class="form-group">
+        <button type="submit">Save Changes</button>
+        <a href="/" class="btn btn-secondary">view all</a></button>
+    </div>
+</form>

@@ -1,0 +1,65 @@
+/* Reset some default styling */
+body, h1, video {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Styling for the header */
+h1 {
+    font-size: 2em;
+    color: #317EFB;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Container for the videos */
+.video-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the video items */
+}
+
+/* Individual video item */
+.video-item {
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for the video player */
+video {
+    width: 300px; /* Fixed width for each video */
+    height: 40%; /* Maintain aspect ratio */
+    border: 2px solid #317EFB;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Adding responsive design */
+@media (max-width: 900px) {
+    .video-container {
+        flex-direction: column; /* Stack videos vertically on smaller screens */
+    }
+
+    .video-item {
+        margin-bottom: 20px; /* Space between videos when stacked */
+    }
+
+    video {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 400px; /* Adjust max width for smaller screens */
+    }
+}

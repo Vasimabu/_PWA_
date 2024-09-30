@@ -1,0 +1,23 @@
+<h1>Cricket Fixtures</h1>
+ 
+    <ul id="fixtures-list">
+        {{#each fixtures}}
+            <li>{{this.name}} - {{this.date}}</li>
+       {{/each}}
+    </ul>
+    {{!-- <p>No fixtures available.</p> --}}
+
+<script src="/script/fixtures.js"></script>
+
+
+  {{!-- <h1>Cricket Fixtures</h1>
+  {{#if fixtures.length}}
+    <ul id="fixtures-list">
+      {{#each fixtures}}
+        <li>{{name}} - {{date}}</li>
+      {{/each}}
+    </ul>
+  {{else}}
+    <p>No fixtures available.</p>
+  {{/if}}
+  <script src="/script/fixtures.js"></script> --}}
